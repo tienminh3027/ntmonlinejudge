@@ -1,0 +1,13 @@
+{
+  "name": "cham-bai-web",
+  "version": "1.0.0",
+  "description": "Web chấm bài C++: up code và test, báo AC/tổng test và lỗi từng test",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.0"
+  }
+}

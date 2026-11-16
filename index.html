@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chấm bài online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>📝 Chấm bài online</h1>
+
+    <section class="card">
+      <label class="field">
+        <span>1. File code (<code>[name].cpp</code>)</span>
+        <input id="code" type="file" accept=".cpp,.cc,.cxx" />
+      </label>
+
+      <label class="field">
+        <span>2. Folder test (folder <code>[name]</code> chứa <code>Test01</code>, <code>Test02</code>, ...)</span>
+        <input id="tests" type="file" webkitdirectory multiple />
+        <small id="testsInfo" class="muted"></small>
+      </label>
+
+      <div class="opts">
+        <label class="field small">
+          <span>Thời gian (giây)</span>
+          <input id="timeLimit" type="number" min="0.1" max="10" step="0.1" value="2" />
+        </label>
+        <label class="field small">
+          <span>Bộ nhớ (MB)</span>
+          <input id="memMB" type="number" min="16" max="512" step="16" value="256" />
+        </label>
+        <label id="pwBox" class="field small hidden">
+          <span>Mật khẩu</span>
+          <input id="password" type="password" />
+        </label>
+        <button id="btnRun" class="primary">▶ Chấm bài</button>
+      </div>
+    </section>
+
+    <section id="result" class="card hidden">
+      <div class="summary">
+        <div id="score" class="score">–</div>
+        <div id="status" class="muted"></div>
+      </div>
+      <div class="bar"><div id="barFill"></div></div>
+      <pre id="ceLog" class="hidden"></pre>
+      <div class="scroll">
+        <table id="table" class="hidden">
+          <thead>
+            <tr><th>Test</th><th>Kết quả</th><th>Thời gian</th><th>Chi tiết</th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
